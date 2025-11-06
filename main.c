@@ -3,10 +3,21 @@
 #include <string.h>
 
 void main(void){
-		 char str[30] = "happy C programming";
-		 
-		 printf("문자열\"%s\"의 길이:%i\n", str, strlen(str));
-   system("PAUSE");	
-   return 0;
+  char input[100];
+  int i;
+  FILE* fp;
+  
+  fp = fopen("sample.txt", "w");
+  
+  for(i=0; i<3; i++){
+  printf("input a word:");
+  scanf("%s", input);
+  fprintf(fp, "%s\n", input);
+  }
 
+  fclose(fp);
+  
+  system("PAUSE");
+  return 0;
+  
 }
